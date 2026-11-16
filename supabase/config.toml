@@ -1,0 +1,8 @@
+[functions.evaluate-answer]
+verify_jwt = true
+
+[functions.fetch-page-content]
+verify_jwt = false
+
+[functions.send-login-email]
+verify_jwt = true

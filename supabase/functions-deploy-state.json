@@ -1,0 +1,17 @@
+{
+  "projectId": "72353336",
+  "functions": {
+    "fetch-page-content": {
+      "hasChanged": false,
+      "hash": "54d9c546e439ba9e2bb0fbd1372533efebe3ac1d21d256b37bce48c7af0d2d86"
+    },
+    "send-login-email": {
+      "hasChanged": false,
+      "hash": "5500b5aaef498378903b930f2f24a44f451ba56f5755b751d3100aaac67009e9"
+    },
+    "evaluate-answer": {
+      "hasChanged": false,
+      "hash": "a7da9cd764a75792eb56f6b2a477c2621ffa038b4c7cbfffad9610b86bb79b1d"
+    }
+  }
+}

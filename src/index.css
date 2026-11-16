@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-warm-50 text-charcoal-900 font-sans antialiased;
+    line-height: 1.6;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+    line-height: 1.2;
+  }
+  ::selection {
+    @apply bg-veyra-200 text-charcoal-900;
+  }
+  :focus-visible {
+    @apply outline-none ring-4 ring-veyra-500/30;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-full bg-veyra-500 px-5 text-sm font-semibold text-charcoal-900 shadow-[0_10px_24px_-12px_rgba(255,106,43,0.7)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-veyra-400 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex h-11 items-center justify-center gap-2 rounded-full border border-charcoal-900/[0.12] bg-white px-5 text-sm font-semibold text-charcoal-900 transition-all duration-200 hover:-translate-y-0.5 hover:border-charcoal-900/25 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-3 py-2 text-sm font-medium text-charcoal-700 transition-colors hover:bg-charcoal-900/5 hover:text-charcoal-900;
+  }
+  .card {
+    @apply rounded-3xl border border-charcoal-900/[0.08] bg-white/90 shadow-card backdrop-blur-sm;
+  }
+  .input-field {
+    @apply w-full rounded-xl border border-charcoal-900/[0.12] bg-white px-4 py-3 text-sm text-charcoal-900 placeholder:text-charcoal-700/70 transition-colors focus:border-veyra-500 focus:outline-none focus:ring-4 focus:ring-veyra-500/15;
+  }
+}
+
+@keyframes coachFloat {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-5px) rotate(2deg); }
+}
+
+@keyframes coachPing {
+  0% { transform: scale(0.7); opacity: 0.9; }
+  70%, 100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes coachPanelIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.coach-avatar, .coach-launcher img {
+  animation: coachFloat 3.2s ease-in-out infinite;
+}
+
+.coach-launcher {
+  isolation: isolate;
+}
+
+.coach-ping {
+  animation: coachPing 1.8s ease-out infinite;
+}
+
+.infinity-lines {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infinity-lines-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.infinity-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-dasharray: 320;
+  animation: infinityDraw 3s linear infinite;
+}
+
+.infinity-line-1 {
+  stroke: #f97316;
+  animation-delay: 0s;
+}
+
+.infinity-line-2 {
+  stroke: #c2410c;
+  stroke-width: 2;
+  opacity: 0.6;
+  animation-delay: 0.4s;
+}
+
+.infinity-line-3 {
+  stroke: #fdba74;
+  stroke-width: 3;
+  opacity: 0.4;
+  animation-delay: 0.8s;
+}
+
+@keyframes infinityDraw {
+  0% { stroke-dashoffset: 320; }
+  100% { stroke-dashoffset: -320; }
+}
+
+.coach-panel {
+  animation: coachPanelIn 220ms ease-out both;
+}
+
+.coach-messages {
+  scrollbar-width: thin;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-warm-300;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-warm-300/80;
+}
